@@ -13,7 +13,7 @@ Spack packages of software used or maintained at Empa.
 
 Clone the repository to your local system:
 ```bash
-git clone https://github.com/empa-scientificit/empa-spack.git /path/to/local/repo
+git clone https://github.com/empa-scientific-it/empa-spack.git /path/to/local/repo
 ```
 
 2. **Add the repository to Spack**
@@ -59,8 +59,8 @@ If you want to make sure to install a package from this specific repository, spe
 ```bash
 spack install empa.package-name
 ```
-
-Remember that Spack's repos order matters. If you have multiple repositories with the same package, Spack will use the first one in the list.
+> [!IMPORTANT]
+> Spack's repos order matters. If you have multiple repositories with the same package, Spack will use the first one in the list.
 
 For example, if your `repos.yaml` file looks like:
 ```yaml
@@ -71,9 +71,6 @@ repos:
 ```
 
 The command `spack install hdf5` will install the package from the `~/proto` repository, if available. If not, it will install the package from the `/usr/local/spack` repository, falling back to the built-in Spack repository if necessary, and failing if no repository provides the package.
-
-Also note that:
-> Any unqualified package name will be resolved by searching `repos.yaml` from the first entry to the last. You can force a particular repository's package by using a fully qualified name.
 
 ## Repository structure
 
