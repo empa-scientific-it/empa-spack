@@ -27,7 +27,7 @@ You can confirm that the repository was added successfully by running:
 ```bash
 spack repo list
 ```
-You should see an entry for this repository, followed by the built-in Spack repository.
+You should see an entry for this repository, followed by the built-in Spack repository (or any other repository previously added).
 
 3. **Check for available packages**
 
@@ -85,7 +85,7 @@ repo/
           └── package.py
 ```
 
-The `repo.yaml` defines the namespace as `empa`. For example:
+The `repo.yaml` defines the namespace as `empa`:
 ```yaml
 repo:
   namespace: empa
