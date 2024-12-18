@@ -20,8 +20,10 @@ git clone https://github.com/empa-scientific-it/empa-spack.git /path/to/local/re
 
 Register the cloned repository with Spack:
 ```bash
-spack repo add /path/to/local/repo
+spack repo add --scope site /path/to/local/repo
 ```
+
+The `--scope site` option will register the repository in `$(prefix)/etc/spack`. Settings saved within the `site` scope affect only *this instance* of Spack and override the defaults and system scopes.
 
 You can confirm that the repository was added successfully by running:
 ```bash
