@@ -1,0 +1,32 @@
+gcc-env:
+  compiler:
+      - toolchain: gcc
+        spec: gcc@13
+  mpi:
+      spec: cray-mpich@8.1.30
+      gpu: Null
+  unify: true
+  specs:
+  - fftw
+  - hdf5+cxx+hl+fortran
+  - libtree
+  - libvdwxc
+  - libxc
+  - netlib-scalapack
+  - openblas threads=openmp
+  - osu-micro-benchmarks@5.9
+  - python@3
+  - py-ase
+  - py-gpaw # the star of the show
+  - py-numpy
+  - py-scipy
+  - zlib-ng
+  variants:
+  - +mpi
+  views:
+    gpaw:
+      link: roots
+      uenv:
+        add_compilers: true
+        prefix_paths:
+          LD_LIBRARY_PATH: [lib, lib64]
