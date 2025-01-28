@@ -1,0 +1,21 @@
+gcc-env:
+    compiler:
+        - toolchain: gcc
+          spec: gcc@13
+    mpi:
+        spec: cray-mpich@8.1.30
+        gpu: null
+    unify: true
+    specs:
+        - python@3
+        - py-ase
+        - py-numpy
+        - py-scipy
+        - py-matplotlib
+        - py-mpi4py
+        - py-cp2k-spm-tools
+    views:
+        default:
+            link: roots
+            uenv:
+                add_compilers: true
