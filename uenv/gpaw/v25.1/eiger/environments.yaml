@@ -4,7 +4,7 @@ gcc-env:
         spec: gcc@13
   mpi:
       spec: cray-mpich@8.1.30
-      gpu: Null
+      gpu: null
   unify: true
   specs:
   - fftw
@@ -17,10 +17,10 @@ gcc-env:
   - osu-micro-benchmarks@5.9
   - python@3
   - py-ase
-  - py-gpaw # the star of the show
   - py-numpy
   - py-scipy
   - zlib-ng
+  - py-gpaw
   variants:
   - +mpi
   views:
