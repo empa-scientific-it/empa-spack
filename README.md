@@ -2,7 +2,7 @@
 
 Spack packages of software used or maintained at Empa.
 
-Check out the [wiki](url) for more guides and information on how to use this repository.
+Check out the [wiki](https://github.com/empa-scientific-it/empa-spack/wiki) for more guides and information on how to use this repository.
 
 ## Repository structure
 
