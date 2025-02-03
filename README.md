@@ -2,12 +2,41 @@
 
 Spack packages of software used or maintained at Empa.
 
-## Prerequisites
+Check out the [wiki](url) for more guides and information on how to use this repository.
+
+## Repository structure
+
+This repository must follow the standard Spack repository structure, plus a few additions:
+```
+repo/
+  ├── repo.yaml   # Metadata for the repository
+  └── packages/   # Directory containing package recipes
+      ├── package1/
+      │   └── package.py
+      └── package2/
+          └── package.py
+uenv/
+  ├── software_name/   # Root folder for a given uenv
+      ├── vX.Y.Z/      # Version folder (semver schema, patch is optional)
+          ├── arch/    # Architecture, 'eiger' (zen2) or 'daint' (gh200)
+```
+
+The `repo.yaml` defines the namespace as `empa`:
+```yaml
+repo:
+  namespace: empa
+```
+
+The `arch/` subfolder under `uenv` must follow the [directory structure](https://eth-cscs.github.io/stackinator/recipes/) of the `stackinator` tool, to be able to build locally or remotely (with `uenv build`).
+
+## Spack
+
+### Prerequisites
 
 1. Ensure you have Spack installed on your system. Follow the [Spack installation guide](https://spack.readthedocs.io/en/latest/getting_started.html) if needed.
 2. Ensure `git` is installed on your system to clone this repository.
 
-## Add this repository
+### Add this repository
 
 1. **Clone**
 
@@ -41,7 +70,7 @@ spack list
 Packages from this repository will appear with the repository's namespace (e.g., `empa.package-name`).
 
 
-## Using the custom packages
+### Using the custom packages
 
 1. **Search for a package**
 
@@ -73,25 +102,6 @@ repos:
 ```
 
 The command `spack install hdf5` will install the package from the `~/proto` repository, if available. If not, it will install the package from the `/usr/local/spack` repository, falling back to the built-in Spack repository if necessary, and failing if no repository provides the package.
-
-## Repository structure
-
-This repository must follow the standard Spack repository structure:
-```
-repo/
-  ├── repo.yaml   # Metadata for the repository
-  └── packages/   # Directory containing package recipes
-      ├── package1/
-      │   └── package.py
-      └── package2/
-          └── package.py
-```
-
-The `repo.yaml` defines the namespace as `empa`:
-```yaml
-repo:
-  namespace: empa
-```
 
 ---
 
