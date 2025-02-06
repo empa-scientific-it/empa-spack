@@ -1,0 +1,20 @@
+gcc-env:
+    compiler:
+        - toolchain: gcc
+          spec: gcc@13
+    mpi:
+        spec: cray-mpich@8.1.30
+        gpu: null
+    unify: true
+    specs:
+        - python@3.8
+        - py-pydantic
+        - py-toml
+        - py-numpy
+        - py-matplotlib
+        - py-ppafm@0.3.2
+    views:
+        default:
+            link: roots
+            uenv:
+                add_compilers: true
