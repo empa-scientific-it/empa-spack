@@ -13,7 +13,7 @@ gcc-env:
     - py-scipy
     - py-matplotlib
     - py-mpi4py
-    - py-cp2k-spm-tools@1.4.4
+    - py-cp2k-spm-tools@1.5.0
   views:
     default:
       link: roots
