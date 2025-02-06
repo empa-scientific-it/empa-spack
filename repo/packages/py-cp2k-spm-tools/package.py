@@ -29,13 +29,20 @@ class PyCp2kSpmTools(PythonPackage):
 
     # Package details
     homepage = "https://github.com/nanotech-empa/cp2k-spm-tools"
-    pypi = "cp2k_spm_tools/cp2k_spm_tools-1.4.4.tar.gz"
+    pypi = "cp2k_spm_tools/cp2k_spm_tools-1.5.0.tar.gz"
 
     maintainers("eimrek", "edoardob90")
 
     license("MIT License", checked_by="edoardob90")
 
-    version("1.4.4", sha256="8295f56120d57ca16511de99c6714ca1b45b30b008ae0c8ecc32be95ed07904d")
+    version(
+        "1.5.0",
+        sha256="beedbc721af8578b1955b112eaeaa10199854587ba3ce7146483ed01b13984cf",
+    )
+    version(
+        "1.4.4",
+        sha256="8295f56120d57ca16511de99c6714ca1b45b30b008ae0c8ecc32be95ed07904d",
+    )
 
     # Dependencies
     # Python version requirement from pyproject.toml
@@ -45,9 +52,9 @@ class PyCp2kSpmTools(PythonPackage):
     depends_on("py-setuptools@61.0:", type="build")
 
     # Runtime dependencies
+    depends_on("mpi", type=("build", "run"))  # External MPI dependency
     depends_on("py-numpy@1.22:2", type=("build", "run"))
     depends_on("py-scipy@1.10:2", type=("build", "run"))
     depends_on("py-ase@3.15:4", type=("build", "run"))
     depends_on("py-matplotlib@3.0:4", type=("build", "run"))
     depends_on("py-mpi4py@3.1:", type=("build", "run"))
-    depends_on("mpi", type=("build", "run"))  # External MPI dependency
