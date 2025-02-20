@@ -1,0 +1,6 @@
+# Ignore backup files
+*.back
+*.bck
+
+# Discard symbolic links to upstream repo folder
+repo
