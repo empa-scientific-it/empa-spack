@@ -45,11 +45,23 @@ class Fresnel(CMakePackage):
     depends_on("cxx", type="build")
 
     # FIXME: Add dependencies if required.
-    # depends_on("foo")
+    depends_on("py-pybind11")
+    depends_on("py-numpy")
+    depends_on("embree")
+    depends_on("qhull")
+
+    variant("cpu", default=True, description="Enable CPU support")
+    variant("gpu", default=False, description="Enable GPU support")
+
+    depends_on("embree", when="+cpu")
+    depends_on("cuda", when="+gpu")
 
     def cmake_args(self):
-        # FIXME: Add arguments other than
-        # FIXME: CMAKE_INSTALL_PREFIX and CMAKE_BUILD_TYPE
-        # FIXME: If not needed delete this function
         args = []
+        if "+cpu" in self.spec:
+            args.append(self.define("ENABLE_EMBREE", True))
+        
+        if "+gpu" in self.spec:
+            args.append(self.define("BUILD_OPTIX", True))
+
         return args
