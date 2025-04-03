@@ -3,4 +3,7 @@
 *.bck
 
 # Discard symbolic links to upstream repo folder
-repo
+uenv/**/repo
+
+# Squashfs files
+*.sqsh
