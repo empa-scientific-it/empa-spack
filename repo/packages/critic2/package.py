@@ -23,29 +23,21 @@ from spack.package import *
 
 
 class Critic2(CMakePackage):
-    """FIXME: Put a proper description of your package here."""
+    """Critic2 is a program for the manipulation and analysis of structural and chemical information in molecules and solids"""
 
-    # FIXME: Add a proper url for your package's homepage here.
-    homepage = "https://www.example.com"
     url = "https://github.com/aoterodelaroza/critic2/archive/refs/tags/1.2.tar.gz"
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers("github_user1", "github_user2")
+    maintainers("edoardob90")
 
-    # FIXME: Add the SPDX identifier of the project's license below.
     # See https://spdx.org/licenses/ for a list. Upon manually verifying
     # the license, set checked_by to your Github username.
-    license("UNKNOWN", checked_by="github_user1")
+    license("GPL-3.0-or-later", checked_by="edoardob90")
 
     version("1.2", sha256="b59ecffd83405dbcc4b5d157d4a94bf2756916f72e83e09a94d277d54d0f2225")
 
     depends_on("c", type="build")
     depends_on("cxx", type="build")
     depends_on("fortran", type="build")
-
-    # FIXME: Add dependencies if required.
-    # depends_on("foo")
 
     def cmake_args(self):
         # FIXME: Add arguments other than
