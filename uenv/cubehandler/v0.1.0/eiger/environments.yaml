@@ -11,6 +11,7 @@ gcc-env:
         - py-flit-core
         - py-click
         - py-scikit-image
+        - py-numpy
         - py-ase
         - py-cubehandler
     views:
