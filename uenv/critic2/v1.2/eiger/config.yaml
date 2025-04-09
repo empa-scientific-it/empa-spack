@@ -1,0 +1,6 @@
+name: critic2
+spack:
+    commit: releases/v0.23
+    repo: https://github.com/spack/spack.git
+store: /user-environment
+description: Provide critic2 package

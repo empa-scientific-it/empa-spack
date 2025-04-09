@@ -1,0 +1,22 @@
+gcc-env:
+    compiler:
+        - toolchain: gcc
+          spec: gcc@13
+    mpi:
+        spec: cray-mpich@8.1.30
+        gpu: null
+    unify: true
+    specs:
+        - python@3.9.13
+        - py-pymatgen@2022.9.8
+        - py-cloudpickle
+        - py-phonopy
+        - py-scikit-image
+        - critic2
+    views:
+        critic:
+            link: roots
+            uenv:
+                add_compilers: true
+                prefix_paths:
+                    LD_LIBRARY_PATH: [lib, lib64]
