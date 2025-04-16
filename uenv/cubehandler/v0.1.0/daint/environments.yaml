@@ -15,9 +15,10 @@ gcc-env:
         - py-ase
         - py-cubehandler
     views:
-        cubehandler:
-            link: roots
+        default:
+            link: all
             uenv:
                 add_compilers: true
                 prefix_paths:
                     LD_LIBRARY_PATH: [lib, lib64]
+                    PATH: [bin]
