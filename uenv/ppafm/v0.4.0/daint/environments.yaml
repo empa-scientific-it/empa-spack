@@ -8,13 +8,12 @@ gcc-env:
     unify: true
     specs:
         - python@3.11
-        - py-pydantic
-        - py-toml
-        - py-numpy
-        - py-matplotlib
         - py-ppafm@0.4.0
     views:
         default:
             link: all
             uenv:
                 add_compilers: true
+                prefix_paths:
+                    PATH: [bin]
+
