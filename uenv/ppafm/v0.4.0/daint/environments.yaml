@@ -7,14 +7,13 @@ gcc-env:
         gpu: null
     unify: true
     specs:
-        - python@3.8
-        - py-pydantic
-        - py-toml
-        - py-numpy
-        - py-matplotlib
-        - py-ppafm@0.3.2
+        - python@3.11
+        - py-ppafm@0.4.0
     views:
         default:
             link: all
             uenv:
                 add_compilers: true
+                prefix_paths:
+                    PATH: [bin]
+
