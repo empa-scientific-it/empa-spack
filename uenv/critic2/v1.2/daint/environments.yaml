@@ -11,8 +11,10 @@ gcc-env:
         - py-pymatgen@2022.9.8
         - py-cloudpickle
         - py-numpy
-        - py-phonopy
         - py-scikit-image
+        - py-seekpath
+        - py-phonopy@2.25.0
+        - py-symfc@1.3.4
         - critic2
     views:
         default:
